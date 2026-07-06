@@ -3,9 +3,12 @@
 A zero-dependency diagnostic tool for AMD ROCm installations. Checks hardware, driver, runtime, and frameworks. Survives broken systems.
 
 ```bash
-pip install rocm-doctor
-python -m rocm_doctor
+git clone https://github.com/Ijas14/rocm-doctor.git
+cd rocm-doctor
+pip install .
+rocm-doctor
 ```
+*(Or run `python -m rocm_doctor` directly from the directory without installing).*
 
 ## Why?
 
