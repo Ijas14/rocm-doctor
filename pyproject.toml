@@ -15,4 +15,7 @@ license = {text = "MIT"}
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/ijas/rocm-doctor"
+Homepage = "https://github.com/Ijas14/rocm-doctor"
+
+[project.scripts]
+rocm-doctor = "rocm_doctor.cli:main"
