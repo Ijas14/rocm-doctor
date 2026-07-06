@@ -9,7 +9,7 @@ python -m rocm_doctor
 
 ## Why?
 
-AMD systems are hard to debug. Not because the information isn't there, but because it's scattered across a dozen tools that each tell part of the truth — and some of them (like `rocm-smi`) occasionally just report "N/A" when they get confused.
+AMD systems are hard to debug. Not because the information isn't there, but because it's scattered across a dozen tools that each tell part of the truth — and some of them (like `rocm-smi`) occasionally lie.
 
 - `rocm-smi` reports "N/A" for GPU names on some hardware
 - Version mismatches between ROCm, HIP, and PyTorch are silent failures
@@ -29,7 +29,7 @@ For each check, `rocm-doctor` queries multiple sources and prefers the most reli
 3. `rocminfo` (ROCm's view)
 4. `rocm-smi` (last resort)
 
-It identifies GPUs by their gfx code (e.g., `gfx942` for MI300X) rather than marketing names, because the gfx code is the one thing that's always reliable. The included `gfx_map` database translates these codes to human names, architectures, and supported ROCm versions.
+It identifies GPUs by their gfx code (e.g., `gfx942` for MI300X) rather than marketing names, because the gfx code is the one thing that's always reliable. The included `gfx_map` database translates those codes into readable GPU families.
 
 ## What it checks
 
@@ -66,7 +66,7 @@ It identifies GPUs by their gfx code (e.g., `gfx942` for MI300X) rather than mar
 
 ## The signature: Never crash, always report
 
-A diagnostic tool that crashes on broken systems is useless. `rocm-doctor` is built to run on a system where ROCm is completely broken, the driver is missing, and `rocm-smi` segfaults — because that's exactly when you need it most.
+A diagnostic tool that crashes on broken systems is useless. `rocm-doctor` is built to run on a system where ROCm is completely broken, the driver is missing, and `rocm-smi` segfaults — because that's exactly when users need it.
 
 - **Zero dependencies.** Pure Python stdlib. If it depended on a broken library, it couldn't diagnose the breakage.
 - **Never raises.** Every check is wrapped. Every failure is captured. The report always generates.
@@ -90,4 +90,4 @@ The `gfx_map` database includes:
   
 ## License
 
-MIT
+[MIT](LICENSE)
