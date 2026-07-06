@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rocm-doctor"
+version = "0.0.1"
+description = "A zero-dependency diagnostic tool for AMD ROCm systems."
+authors = [
+    {name = "ijas", email = "ijas@example.com"}
+]
+readme = "README.md"
+requires-python = ">=3.7"
+license = {text = "MIT"}
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/ijas/rocm-doctor"
